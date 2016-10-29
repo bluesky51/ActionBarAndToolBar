@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--更改标题栏ActionBar的颜色-->
+        <item name="colorPrimary">@android:color/holo_green_light</item>
+        <!--更改状态栏的颜色-->
+        <item name="colorPrimaryDark">@android:color/holo_orange_light</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--更改状态栏的颜色-->
+        <item name="android:statusBarColor">#ff00ff</item>
+        <!--更改底部虚拟导航栏的颜色-->
+        <item name="android:navigationBarColor">#00ffff</item>
+    </style>
+
+</resources>

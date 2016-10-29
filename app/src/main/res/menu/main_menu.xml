@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/call"
+        android:icon="@android:drawable/ic_menu_call"
+        app:showAsAction="always"
+        android:title="打电话"></item>
+
+
+    <item
+        android:id="@+id/delete"
+        android:icon="@android:drawable/ic_menu_delete"
+        app:showAsAction="always"
+        android:title="打电话"></item>
+
+    <item
+        android:id="@+id/edit"
+        android:icon="@android:drawable/ic_menu_edit"
+        app:showAsAction="never"
+        android:title="打电话"></item>
+
+
+    <!--actionViewClass:搜索显示页面,值引用的系统的，系统会自动识别-->
+    <item
+        android:id="@+id/search"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="never"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:title="搜索"></item>
+    <!--actionProviderClass:分享，只有共享的东西才可以分享Provider,值引用的系统的，系统会自动识别-->
+    <item
+        android:id="@+id/share"
+        android:icon="@android:drawable/ic_menu_share"
+        app:actionProviderClass="android.support.v7.widget.ShareActionProvider"
+        app:showAsAction="never"
+        android:title="分享"></item>
+</menu>
