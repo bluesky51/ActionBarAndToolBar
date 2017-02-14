@@ -1,0 +1,56 @@
+# ActionBarAndToolBar
+android3.0出现的ActionBar进行基本介绍以及Android5.0后ToolBar的基本使用
+
+手机屏幕划分：    
+状态栏： <item name="android:statusBarColor">#ffff00</item>android5.0后生效  
+       标题栏：  
+       内容区域： <item name="android:windowBackground">@android:color/black</item>  
+       虚拟导航栏：<item name="android:navigationBarColor">#0000ff</item> android5.0后生效  
+
+       备注  ：
+       主题的应用：1》@android:style/xx :当前Activity必须继承Activity :android.app包中  
+                 2》@style/xx：(含有AppCompat):当前Activity必须继承AppCompatActivity :android.support.v7包  
+                 AppCompatActivity－FragmentActivity-Activity  
+
+       动作栏:    
+       ToolBar(位置随意，控件,拓展性比较好)替换ActionBar(灵活性比较差):  
+
+       1.显示ToolBar:  
+           1>去掉ActionBar(通过主题去掉),  
+           2>在需要Toolbar的Activity页面布局中书写该控件;  
+           3> java代码查找ToolBar控件；  
+            配置toolbar(左边的,导航图标，logo，标题):必须放在setSupportActionBar()之前  
+           调用setSupportActionBar(toolbar)  
+
+           4>配置右边的菜单栏：  
+       1》加载菜单：onCreateOptionsMenu(Menu menu):  
+       (project)res-menu-xx.xml  
+       2》点击事件2种：  
+       第一种：setOnMenuItemClickListener();必须放在setSupportActionBar()之后  
+       第二种：onOptionsItemSelected(MenuItem item)：  
+
+
+ 备注：
+        以下都是v7兼容包的；menu中引用,例如：app:xx  
+       ActionView: SearchView(support.v7),例如:app:actionViewClass:包名＋类名  
+       Provider: shareActionProvider,例如：app:shareActionProviderClass:包名＋类名  
+
+       以上2中处理事件放在onCreateOptionsMenu();  
+       关键类：MenuItemCompat.getActionView()/MenuItemCompat.getActionProvider():menu.findItem(R.id.xx)  
+
+       SearchView使用：监听搜索输入的内容：setQueryTextChangeListener():  
+
+       shareActionProvider:分享：setShareIntent(Intent intent);  
+
+
+
+       Intent相关的系统功能：  
+       拨打电话(1，进入拨号页面，2.直接拨号(权限))tel:// sms://  
+       分享(图片，文字，视频，音频)  
+       打开一个网页：  
+       安装apk  
+       评价：跳转到市场  
+       卸载apk  
+       查看文件(ACTION_VIEW，查图片，查看文字(乱码UTF-8,gbk,gb2312,ISO-8859-1)，查看视频，查看音频)  
+
+备注：ToolBar:是ViewGroup的子类，容器，自己定义标题栏里的控件  
